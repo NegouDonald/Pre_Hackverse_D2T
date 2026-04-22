@@ -10,7 +10,14 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-default-key')
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*').split(',')
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*').split(',')
+ALLOWED_HOSTS = [
+    "smarttime.negou.tech",
+    "api.smarttime.negou.tech",
+    "localhost",
+    "127.0.0.1",
+]
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -142,7 +149,13 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
-CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='http://localhost:5173').split(',')
+# CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='http://localhost:5173').split(',')
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://smarttime.negou.tech",
+    "https://smarttime.negou.tech",
+]
+
 CORS_ALLOW_CREDENTIALS = True
 
 SPECTACULAR_SETTINGS = {

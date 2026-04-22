@@ -1,51 +1,27 @@
-version: "3.9"
-
 services:
-  traefik:
-    image: traefik:v2.10
-    command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
-      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
-      - "--certificatesresolvers.myresolver.acme.email=tameguedonald@gmail.com"
-      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
-    ports:
-      - "8020:80"
-      - "8443:443"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./letsencrypt:/letsencrypt"
-    networks:
-      - ntanet
 
   backend:
     container_name: smarttimebackend
     build: ./backend
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.backend.rule=Host(`api.smarttime.negou.tech`)"
-      - "traefik.http.routers.backend.entrypoints=websecure"
-      - "traefik.http.routers.backend.tls.certresolver=myresolver"
-    networks:
-      - ntanet
+    restart: always
+    ports:
+      - "8020:8000"
     depends_on:
       - postgres
+    networks:
+      - ntanet
 
   frontend:
     container_name: smarttimefront
     build: ./frontend
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.front.rule=Host(`smarttime.negou.tech`)"
-      - "traefik.http.routers.front.entrypoints=websecure"
-      - "traefik.http.routers.front.tls.certresolver=myresolver"
+    restart: always
     networks:
       - ntanet
 
   postgres:
+    container_name: postgres_server
     image: postgres:15
+    restart: always
     environment:
       POSTGRES_USER: smarttime
       POSTGRES_PASSWORD: password
