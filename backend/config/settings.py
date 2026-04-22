@@ -67,12 +67,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'smarttimedb',
+        'USER': 'smarttime',
+        'PASSWORD': 'password',
+        'HOST': 'postgres_server',
+        'PORT': '5432',
     }
 }
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
