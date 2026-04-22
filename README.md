@@ -1,4 +1,4 @@
-# 🎓 SmartTime Manager : Gestion Intelligente du Temps Étudiant
+# 🎓 SmartTime Manager : Gestion Intelligente du Temps Étudiant, par l'equipe D2T
 
 [![Django](https://img.shields.io/badge/Backend-Django%205.1-092E20?logo=django)](https://www.djangoproject.com/)
 [![React](https://img.shields.io/badge/Frontend-React%2018-61DAFB?logo=react)](https://reactjs.org/)
