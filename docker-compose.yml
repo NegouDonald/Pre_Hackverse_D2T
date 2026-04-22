@@ -12,7 +12,7 @@ services:
       - "--certificatesresolvers.myresolver.acme.email=tameguedonald@gmail.com"
       - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
     ports:
-      - "80:80"
+      - "8020:80"
       - "443:443"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
