@@ -1,0 +1,12 @@
+django>=5.0
+djangorestframework
+djangorestframework-simplejwt
+django-cors-headers
+django-filter
+python-decouple
+requests
+django-celery-beat
+django-celery-results
+psycopg2-binary
+Pillow
+drf-spectacular
