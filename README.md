@@ -119,5 +119,5 @@ Pour tester l'application immédiatement avec des données pré-remplies :
 - **Clean Code** : Séparation des services métiers dans le backend et hooks personnalisés dans le front.
 
 ---
-Développé avec passion pour le hackathon de gestion du temps. 🚀
+Développé avec passion par l'equipe D2T pour le hackathon de gestion du temps. 🚀
 # Pre_Hackverse_NomDeLEquipe
