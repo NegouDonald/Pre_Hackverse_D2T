@@ -5,10 +5,11 @@ from datetime import timedelta
 from django.utils import timezone
 
 # Setup Django environment
-sys.path.append('/media/negou/Nouveau nom10/HACkATHON/hackvase/student_time_manager/backend')
-sys.path.append('/media/negou/Nouveau nom10/HACkATHON/hackvase/student_time_manager/backend/apps')
+sys.path.insert(0, '/app')
+sys.path.insert(0, '/app/apps')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 django.setup()
+
 
 from users.models import User
 from tasks.models import Task, Tag, StudySession
