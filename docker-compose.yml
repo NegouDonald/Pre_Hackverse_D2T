@@ -19,15 +19,15 @@ services:
       - ntanet
 
   postgres:
-  image: postgres:15
-  environment:
-    POSTGRES_USER: smarttime
-    POSTGRES_PASSWORD: Nth1234
-    POSTGRES_DB: smarttimedb
-  volumes:
-    - postgres_data:/var/lib/postgresql/data
-  networks:
-    - ntanet
+    image: postgres:15
+    environment:
+      POSTGRES_USER: smarttime
+      POSTGRES_PASSWORD: Nth1234
+      POSTGRES_DB: smarttimedb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ntanet
 
 volumes:
   postgres_data:
