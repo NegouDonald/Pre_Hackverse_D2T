@@ -85,11 +85,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'smarttimedb',
         'USER': 'smarttime',
-        'PASSWORD': 'password',
-        'HOST': 'postgres_server',
+        'PASSWORD': 'Nth1234',
+        'HOST': 'postgres',
         'PORT': '5432',
     }
 }
+
 
 
 # Password validation
@@ -116,6 +117,7 @@ USE_TZ = True
 
 # Static files
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

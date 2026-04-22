@@ -10,3 +10,4 @@ django-celery-results
 psycopg2-binary
 Pillow
 drf-spectacular
+gunicorn

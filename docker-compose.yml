@@ -15,8 +15,11 @@ services:
     container_name: smarttimefront
     build: ./frontend
     restart: always
+    ports:
+      - "3020:80"
     networks:
       - ntanet
+
 
   postgres:
     image: postgres:15
